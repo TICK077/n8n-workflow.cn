@@ -198,7 +198,7 @@ class WorkflowSearch {
             .join('');
 
         const moreIntegrations = workflow.integrations.length > 3
-            ? `<span class="integration-tag">+${workflow.integrations.length - 3} more</span>`
+            ? `<span class="integration-tag">+${workflow.integrations.length - 3} 集成项</span>`
             : '';
 
         card.innerHTML = `
@@ -208,8 +208,8 @@ class WorkflowSearch {
             <div class="workflow-meta">
                 <span class="meta-tag category">${workflow.category}</span>
                 <span class="meta-tag trigger">${workflow.trigger_type}</span>
-                <span class="meta-tag">${workflow.complexity} complexity</span>
-                <span class="meta-tag">${workflow.node_count} nodes</span>
+                <span class="meta-tag">复杂度 ${workflow.complexity}</span>
+                <span class="meta-tag">${workflow.node_count} 个节点</span>
             </div>
 
             <div class="workflow-integrations">
@@ -219,10 +219,10 @@ class WorkflowSearch {
 
             <div class="workflow-actions">
                 <a href="${workflow.download_url}" class="btn btn-primary" target="_blank" onclick="event.stopPropagation()">
-                    📥 Download JSON
+                    📥 下载 JSON
                 </a>
                 <button class="btn btn-secondary" onclick="event.stopPropagation(); window.copyWorkflowId('${workflow.filename}')">
-                    📋 Copy ID
+                    📋 复制 ID
                 </button>
             </div>
         `;
@@ -320,10 +320,10 @@ class WorkflowSearch {
 
             <div style="display: flex; gap: 1rem;">
                 <a href="${workflow.download_url}" class="btn btn-primary" target="_blank">
-                    📥 Download JSON
+                    📥 下载 JSON
                 </a>
                 <button class="btn btn-secondary" onclick="window.copyWorkflowId('${workflow.filename}')">
-                    📋 Copy Filename
+                    📋 复制文件名
                 </button>
             </div>
         `;
@@ -333,16 +333,16 @@ class WorkflowSearch {
     }
 
     updateResultsHeader(query, filters) {
-        let title = 'Search Results';
+        let title = '搜索结果';
         let filterDesc = [];
 
         if (query) {
-            title = `Search: "${query}"`;
+            title = `搜索："${query}"`;
         }
 
-        if (filters.category) filterDesc.push(`Category: ${filters.category}`);
-        if (filters.complexity) filterDesc.push(`Complexity: ${filters.complexity}`);
-        if (filters.trigger) filterDesc.push(`Trigger: ${filters.trigger}`);
+        if (filters.category) filterDesc.push(`分类: ${filters.category}`);
+        if (filters.complexity) filterDesc.push(`复杂度: ${filters.complexity}`);
+        if (filters.trigger) filterDesc.push(`触发器: ${filters.trigger}`);
 
         if (filterDesc.length > 0) {
             title += ` (${filterDesc.join(', ')})`;
@@ -412,7 +412,7 @@ window.copyWorkflowId = function(filename) {
         // Show temporary success message
         const btn = event.target;
         const originalText = btn.textContent;
-        btn.textContent = '✅ Copied!';
+        btn.textContent = '✅ 已复制!';
         setTimeout(() => {
             btn.textContent = originalText;
         }, 2000);
@@ -427,7 +427,7 @@ window.copyWorkflowId = function(filename) {
 
         const btn = event.target;
         const originalText = btn.textContent;
-        btn.textContent = '✅ Copied!';
+        btn.textContent = '✅ 已复制!';
         setTimeout(() => {
             btn.textContent = originalText;
         }, 2000);
