@@ -208,8 +208,8 @@ class WorkflowSearch {
             <div class="workflow-meta">
                 <span class="meta-tag category">${workflow.category}</span>
                 <span class="meta-tag trigger">${workflow.trigger_type}</span>
-                <span class="meta-tag">复杂度 ${workflow.complexity}</span>
-                <span class="meta-tag">${workflow.node_count} 个节点</span>
+                <span class="meta-tag">${workflow.complexity}复杂</span>
+                <span class="meta-tag">${workflow.node_count}个节点</span>
             </div>
 
             <div class="workflow-integrations">
@@ -303,7 +303,7 @@ class WorkflowSearch {
             </div>
 
             <div style="margin-bottom: 1.5rem;">
-                <strong>Integrations:</strong>
+                <strong>集成项:</strong>
                 <div style="margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.25rem;">
                     ${allIntegrations}
                 </div>
@@ -311,7 +311,7 @@ class WorkflowSearch {
 
             ${workflow.tags.length > 0 ? `
                 <div style="margin-bottom: 1.5rem;">
-                    <strong>Tags:</strong>
+                    <strong>标签:</strong>
                     <div style="margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.25rem;">
                         ${allTags}
                     </div>
@@ -349,7 +349,7 @@ class WorkflowSearch {
         }
 
         this.resultsTitle.textContent = title;
-        this.resultsCount.textContent = `找到 ${this.currentResults.length} 个workflow`;
+        this.resultsCount.textContent = `找到 ${this.currentResults.length} 个 workflows`;
     }
 
     loadMoreResults() {
