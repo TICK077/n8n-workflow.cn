@@ -286,19 +286,19 @@ class WorkflowSearch {
             <h2 style="margin-bottom: 1rem;">${this.escapeHtml(workflow.name)}</h2>
 
             <div style="margin-bottom: 1.5rem;">
-                <strong>Description:</strong>
+                <strong>描述:</strong>
                 <p style="margin-top: 0.5rem;">${this.escapeHtml(workflow.description)}</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
-                <strong>Details:</strong>
+                <strong>详情:</strong>
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 0.5rem;">
-                    <div><strong>Category:</strong> ${workflow.category}</div>
-                    <div><strong>Trigger:</strong> ${workflow.trigger_type}</div>
-                    <div><strong>Complexity:</strong> ${workflow.complexity}</div>
-                    <div><strong>Nodes:</strong> ${workflow.node_count}</div>
-                    <div><strong>Status:</strong> ${workflow.active ? 'Active' : 'Inactive'}</div>
-                    <div><strong>File:</strong> ${workflow.filename}</div>
+                    <div><strong>分类:</strong> ${workflow.category}</div>
+                    <div><strong>触发方式:</strong> ${workflow.trigger_type}</div>
+                    <div><strong>复杂度:</strong> ${workflow.complexity}</div>
+                    <div><strong>节点数:</strong> ${workflow.node_count}</div>
+                    <div><strong>状态:</strong> ${workflow.active ? '活跃' : '非活跃'}</div>
+                    <div><strong>文件名:</strong> ${workflow.filename}</div>
                 </div>
             </div>
 
@@ -349,7 +349,7 @@ class WorkflowSearch {
         }
 
         this.resultsTitle.textContent = title;
-        this.resultsCount.textContent = `${this.currentResults.length} workflows found`;
+        this.resultsCount.textContent = `找到 ${this.currentResults.length} 个workflow`;
     }
 
     loadMoreResults() {
