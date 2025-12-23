@@ -649,24 +649,24 @@
     <!-- Header -->
     <header class="header">
       <div class="container">
-        <h1 class="title">⚡ N8N Workflow Documentation</h1>
-        <p class="subtitle">Lightning-fast workflow browser with instant search</p>
+        <h1 class="title">⚡ N8N Workflow 中文站</h1>
+        <p class="subtitle">疾速流览 · 即搜即达</p>
         <div class="stats">
           <div class="stat">
             <span class="stat-number" id="totalCount">0</span>
-            <span class="stat-label">Total</span>
+            <span class="stat-label">总数</span>
           </div>
           <div class="stat">
             <span class="stat-number" id="activeCount">0</span>
-            <span class="stat-label">Active</span>
+            <span class="stat-label">活跃数</span>
           </div>
           <div class="stat">
             <span class="stat-number" id="nodeCount">0</span>
-            <span class="stat-label">Total Nodes</span>
+            <span class="stat-label">节点总数</span>
           </div>
           <div class="stat">
             <span class="stat-number" id="integrationCount">0</span>
-            <span class="stat-label">Integrations</span>
+            <span class="stat-label">集成项</span>
           </div>
         </div>
       </div>
@@ -682,38 +682,38 @@
 
         <div class="filter-section">
           <div class="filter-group">
-            <label for="triggerFilter">Trigger:</label>
+            <label for="triggerFilter">触发器:</label>
             <select id="triggerFilter">
-              <option value="all">All Types</option>
+              <option value="all">所有</option>
               <option value="Webhook">Webhook</option>
-              <option value="Scheduled">Scheduled</option>
-              <option value="Manual">Manual</option>
-              <option value="Complex">Complex</option>
+              <option value="Scheduled">定时触发</option>
+              <option value="Manual">手动触发</option>
+              <option value="Complex">复杂流程</option>
             </select>
           </div>
 
           <div class="filter-group">
-            <label for="complexityFilter">Complexity:</label>
+            <label for="complexityFilter">复杂度:</label>
             <select id="complexityFilter">
-              <option value="all">All Levels</option>
-              <option value="low">Low (≤5 nodes)</option>
-              <option value="medium">Medium (6-15 nodes)</option>
-              <option value="high">High (16+ nodes)</option>
+              <option value="all">所有</option>
+              <option value="low">低 (≤5 个节点)</option>
+              <option value="medium">中 (6-15 个节点)</option>
+              <option value="high">高 (16+ 个节点)</option>
             </select>
           </div>
 
           <div class="filter-group">
-            <label for="categoryFilter">Category:</label>
+            <label for="categoryFilter">分类:</label>
             <select id="categoryFilter">
-              <option value="all">All Categories</option>
-              <!-- Categories will be populated dynamically -->
+              <option value="all">所有分类</option>
+              <!-- 类别将动态填充。 -->
             </select>
           </div>
 
           <div class="filter-group">
             <label>
               <input type="checkbox" id="activeOnly">
-              Active only
+              仅显示启用的
             </label>
           </div>
 
@@ -721,7 +721,7 @@
         </div>
 
         <div class="results-info">
-          <span id="resultsCount">Loading...</span>
+          <span id="resultsCount">加载中...</span>
         </div>
       </div>
     </div>
@@ -732,23 +732,23 @@
         <!-- Loading State -->
         <div id="loadingState" class="state loading">
           <div class="icon">⚡</div>
-          <h3>Loading workflows...</h3>
-          <p>Please wait while we fetch your workflow data</p>
+          <h3>正在加载 workflows...</h3>
+          <p>正在获取workflow数据，请稍后</p>
         </div>
 
         <!-- Error State -->
         <div id="errorState" class="state error hidden">
           <div class="icon">❌</div>
-          <h3>Error Loading Workflows</h3>
-          <p id="errorMessage">Something went wrong. Please try again.</p>
+          <h3>在加载 Workflows 时出现了一些错误</h3>
+          <p id="errorMessage">出现了一些问题，请稍后再试</p>
           <button id="retryBtn" class="retry-btn">Retry</button>
         </div>
 
         <!-- No Results State -->
         <div id="noResultsState" class="state hidden">
           <div class="icon">🔍</div>
-          <h3>No workflows found</h3>
-          <p>Try adjusting your search terms or filters</p>
+          <h3>未找到workflows</h3>
+          <p>请尝试调整搜索词或筛选条件</p>
         </div>
 
         <!-- Workflows Grid -->
@@ -773,25 +773,25 @@
         <div class="modal-body">
           <div class="workflow-detail">
             <h4>Description</h4>
-            <p id="modalDescription">Loading...</p>
+            <p id="modalDescription">加载中...</p>
           </div>
 
           <div class="workflow-detail">
             <h4>Statistics</h4>
-            <div id="modalStats">Loading...</div>
+            <div id="modalStats">加载中...</div>
           </div>
 
           <div class="workflow-detail">
             <h4>Integrations</h4>
-            <div id="modalIntegrations">Loading...</div>
+            <div id="modalIntegrations">加载中...</div>
           </div>
 
           <div class="workflow-detail">
             <h4>Actions</h4>
             <div class="workflow-actions">
-              <a id="downloadBtn" class="action-btn primary" href="#" download>📥 Download JSON</a>
-              <button id="viewJsonBtn" class="action-btn">📄 View JSON</button>
-              <button id="viewDiagramBtn" class="action-btn">📊 View Diagram</button>
+              <a id="downloadBtn" class="action-btn primary" href="#" download>📥 下载 JSON</a>
+              <button id="viewJsonBtn" class="action-btn">📄 浏览 JSON</button>
+              <button id="viewDiagramBtn" class="action-btn">📊 浏览 Diagram</button>
             </div>
           </div>
 
@@ -799,7 +799,7 @@
             <div class="section-header">
               <h4>Workflow JSON</h4>
               <button id="copyJsonBtn" class="copy-btn" title="Copy JSON to clipboard">
-                📋 Copy
+                📋 复制
               </button>
             </div>
             <div class="json-viewer" id="jsonViewer">Loading...</div>
@@ -813,12 +813,12 @@
                 <button id="zoomOutBtn" class="zoom-btn" title="Zoom Out">🔍-</button>
                 <button id="zoomResetBtn" class="zoom-btn" title="Reset Zoom">🔄</button>
                 <button id="copyDiagramBtn" class="copy-btn" title="Copy diagram code to clipboard">
-                  📋 Copy
+                  📋 复制
                 </button>
               </div>
             </div>
             <div id="diagramContainer" class="diagram-container">
-              <div id="diagramViewer">Loading diagram...</div>
+              <div id="diagramViewer">加载 diagram 中...</div>
             </div>
           </div>
         </div>
@@ -1440,8 +1440,8 @@
         this.isDragging = false;
 
         // Reset button states
-        this.elements.viewJsonBtn.textContent = '📄 View JSON';
-        this.elements.viewDiagramBtn.textContent = '📊 View Diagram';
+        this.elements.viewJsonBtn.textContent = '📄 查看 JSON';
+        this.elements.viewDiagramBtn.textContent = '📊 查看 Diagram';
 
         // Reset copy button states
         this.resetCopyButton('copyJsonBtn');
@@ -1455,12 +1455,12 @@
 
         if (isVisible) {
           this.elements.jsonSection.classList.add('hidden');
-          this.elements.viewJsonBtn.textContent = '📄 View JSON';
+          this.elements.viewJsonBtn.textContent = '📄 查看 JSON';
         } else {
           try {
-            this.elements.jsonViewer.textContent = 'Loading...';
+            this.elements.jsonViewer.textContent = '加载中...';
             this.elements.jsonSection.classList.remove('hidden');
-            this.elements.viewJsonBtn.textContent = '📄 Hide JSON';
+            this.elements.viewJsonBtn.textContent = '📄 隐藏 JSON';
 
             const data = await this.apiCall(`/workflows/${this.currentWorkflow.filename}`);
             const jsonString = JSON.stringify(data.raw_json, null, 2);
@@ -1480,12 +1480,12 @@
 
         if (isVisible) {
           this.elements.diagramSection.classList.add('hidden');
-          this.elements.viewDiagramBtn.textContent = '📊 View Diagram';
+          this.elements.viewDiagramBtn.textContent = '📊 查看 Diagram';
         } else {
           try {
-            this.elements.diagramViewer.textContent = 'Loading diagram...';
+            this.elements.diagramViewer.textContent = '加载 diagram 中...';
             this.elements.diagramSection.classList.remove('hidden');
-            this.elements.viewDiagramBtn.textContent = '📊 Hide Diagram';
+            this.elements.viewDiagramBtn.textContent = '📊 隐藏 Diagram';
 
             const data = await this.apiCall(`/workflows/${this.currentWorkflow.filename}/diagram`);
             this.currentDiagramData = data.diagram;
@@ -1507,7 +1507,7 @@
               }, 100);
             }
           } catch (error) {
-            this.elements.diagramViewer.textContent = 'Error loading diagram: ' + error.message;
+            this.elements.diagramViewer.textContent = '在加载 diagram 时出现错误: ' + error.message;
             this.currentDiagramData = null;
           }
         }
@@ -1700,7 +1700,7 @@
         if (!button) return;
 
         const originalText = button.innerHTML;
-        button.innerHTML = '✅ Copied!';
+        button.innerHTML = '✅ 已复制!';
         button.classList.add('copied');
 
         setTimeout(() => {
@@ -1713,7 +1713,7 @@
         const button = document.getElementById(buttonId);
         if (!button) return;
 
-        button.innerHTML = '📋 Copy';
+        button.innerHTML = '📋 复制';
         button.classList.remove('copied');
       }
     }

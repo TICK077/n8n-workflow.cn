@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N8N Workflow Collection - Search & Browse 4300+ Workflows</title>
+    <title>N8N Workflow Collection 中文站 - 搜索 & 浏览 4300+ Workflows</title>
     <meta name="description" content="Browse and search through 4300+ n8n workflow automations. Find workflows for Telegram, Discord, Gmail, AI, and hundreds of other integrations.">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -14,9 +14,9 @@
         <div class="container">
             <h1 class="logo">
                 <span class="logo-emoji">⚡</span>
-                N8N Workflow Collection
+                N8N Workflow Collection 中文站
             </h1>
-            <p class="tagline">Search & Browse <span id="total-count">4343</span> Professional Automation Workflows</p>
+            <p class="tagline">搜索 & 浏览<span id="total-count">4343</span> 专业自动化 Workflows</p>
         </div>
     </header>
 
@@ -28,7 +28,7 @@
                     <input
                         type="text"
                         id="search-input"
-                        placeholder="Search workflows... (e.g., telegram, calculation, gmail)"
+                        placeholder="搜索 workflows... (例如：telegram, calculation, gmail)"
                         autocomplete="off"
                     >
                     <button id="search-btn" class="search-btn">
@@ -38,22 +38,22 @@
 
                 <div class="filters">
                     <select id="category-filter">
-                        <option value="">All Categories</option>
+                        <option value="">所有分类</option>
                     </select>
 
                     <select id="complexity-filter">
-                        <option value="">All Complexity</option>
-                        <option value="low">Low (≤5 nodes)</option>
-                        <option value="medium">Medium (6-15 nodes)</option>
-                        <option value="high">High (16+ nodes)</option>
+                        <option value="">所有复杂度</option>
+                        <option value="low">低 (≤5 节点)</option>
+                        <option value="medium">中 (6-15 节点)</option>
+                        <option value="high">高 (16+ 节点)</option>
                     </select>
 
                     <select id="trigger-filter">
-                        <option value="">All Triggers</option>
-                        <option value="Manual">Manual</option>
+                        <option value="">所有触发器</option>
+                        <option value="Manual">手动</option>
                         <option value="Webhook">Webhook</option>
-                        <option value="Scheduled">Scheduled</option>
-                        <option value="Complex">Complex</option>
+                        <option value="Scheduled">定时触发</option>
+                        <option value="Complex">复杂流程</option>
                     </select>
                 </div>
             </div>
@@ -64,19 +64,19 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number" id="workflows-count">-</div>
-                    <div class="stat-label">Total Workflows</div>
+                    <div class="stat-label">已收录 Workflows</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number" id="active-count">-</div>
-                    <div class="stat-label">Active Workflows</div>
+                    <div class="stat-label">活跃中 Workflows</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number" id="integrations-count">-</div>
-                    <div class="stat-label">Integrations</div>
+                    <div class="stat-label">集成项</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number" id="categories-count">-</div>
-                    <div class="stat-label">Categories</div>
+                    <div class="stat-label">分类数</div>
                 </div>
             </div>
         </section>
@@ -84,13 +84,13 @@
         <!-- Results Section -->
         <section class="results-section">
             <div class="results-header">
-                <h2 id="results-title">Featured Workflows</h2>
+                <h2 id="results-title">推荐 Workflows</h2>
                 <div class="results-count" id="results-count"></div>
             </div>
 
             <div id="loading" class="loading hidden">
                 <div class="spinner"></div>
-                <span>Loading workflows...</span>
+                <span>加载 Workflows 中...</span>
             </div>
 
             <div id="results-grid" class="results-grid">
@@ -99,11 +99,11 @@
 
             <div id="no-results" class="no-results hidden">
                 <div class="no-results-icon">🔍</div>
-                <h3>No workflows found</h3>
-                <p>Try adjusting your search terms or filters</p>
+                <h3>未找到 Workflows</h3>
+                <p>请尝试调整搜索词或筛选条件</p>
             </div>
 
-            <button id="load-more" class="load-more hidden">Load More Workflows</button>
+            <button id="load-more" class="load-more hidden">加载更多 Workflows</button>
         </section>
     </main>
 
@@ -111,7 +111,7 @@
         <div class="container">
             <p>
                 🚀 Powered by the
-                <a href="https://github.com/Zie619/n8n-workflows" target="_blank">N8N Workflow Collection</a>
+                <a href="https://github.com/TICK077/n8n-workflows.cn" target="_blank">N8N Workflow Collection 中文站</a>
                 | Built with ❤️ for the n8n community
             </p>
             <p class="footer-links">

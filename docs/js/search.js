@@ -34,8 +34,8 @@ class WorkflowSearch {
             this.updateStats();
             this.showFeaturedWorkflows();
         } catch (error) {
-            console.error('Failed to initialize search:', error);
-            this.showError('Failed to load workflow data. Please try again later.');
+            console.error('搜索初始化失败：', error);
+            this.showError('Workflows数据加载失败，请稍后重试。');
         }
     }
 
@@ -44,7 +44,7 @@ class WorkflowSearch {
         try {
             const response = await fetch('api/search-index.json');
             if (!response.ok) {
-                throw new Error('Failed to load search index');
+                throw new Error('搜索索引加载失败');
             }
             this.searchIndex = await response.json();
         } finally {
@@ -151,7 +151,7 @@ class WorkflowSearch {
         this.currentResults = featured;
         this.displayedCount = 0;
         this.displayResults(true);
-        this.resultsTitle.textContent = 'Featured Workflows';
+        this.resultsTitle.textContent = '推荐的 Workflows';
         this.resultsCount.textContent = '';
     }
 

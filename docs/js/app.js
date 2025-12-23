@@ -49,7 +49,7 @@ class WorkflowApp {
         // Basic analytics for tracking popular workflows
         this.trackEvent = (category, action, label) => {
             // Could integrate with Google Analytics or other tracking
-            console.debug('Analytics:', { category, action, label });
+            console.debug('分析：', { category, action, label });
         };
 
         // Track search queries
@@ -57,7 +57,7 @@ class WorkflowApp {
         if (searchInput) {
             searchInput.addEventListener('input', this.debounce((e) => {
                 if (e.target.value.length > 2) {
-                    this.trackEvent('Search', 'query', e.target.value);
+                    this.trackEvent('搜索', '查询', e.target.value);
                 }
             }, 1000));
         }
@@ -66,7 +66,7 @@ class WorkflowApp {
         document.addEventListener('click', (e) => {
             if (e.target.matches('a[href*=".json"]')) {
                 const filename = e.target.href.split('/').pop();
-                this.trackEvent('Download', 'workflow', filename);
+                this.trackEvent('下载', 'workflow', filename);
             }
         });
     }
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add helpful hints
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
-        searchInput.setAttribute('title', 'Press / to focus search, Escape to clear');
+        searchInput.setAttribute('title', '按 / 键聚焦搜索，按 Esc 键清除搜索。');
     }
 });
 
