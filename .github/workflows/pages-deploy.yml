@@ -41,7 +41,8 @@ jobs:
           path: './docs'
 
       - name: Add CNAME
-        run: echo "n8n-workflow.cn" > CNAME
+        run: echo "n8n-workflow.cn" > ./docs/CNAME
+
 
       - name: Deploy to GitHub Pages
         id: deployment
