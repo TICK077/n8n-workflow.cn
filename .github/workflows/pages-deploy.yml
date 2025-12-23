@@ -39,9 +39,9 @@ jobs:
         with:
           # Upload docs directory
           path: './docs'
-          
+
       - name: Add CNAME
-        run: echo "t1ck.ing" > public/CNAME
+        run: echo "n8n-workflow.cn" > CNAME
 
       - name: Deploy to GitHub Pages
         id: deployment
