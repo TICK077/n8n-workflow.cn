@@ -21,8 +21,6 @@
 > 仅提供 **在线浏览与参考**，不涉及本地部署或离线使用。  
 > 如需原站介绍，请参阅 [Zie619 / n8n-workflows](https://github.com/Zie619/n8n-workflows)   
 
-> **未来将会翻译Workflow的描述**
-
 ---
 
 ## 🔹 功能亮点
@@ -69,6 +67,14 @@
 
 - [n8n 官方网站](https://n8n.io/)  
 - [n8n 中文文档](https://docs.n8n.io/)  
-- [GitHub 仓库](https://github.com/TICK077/n8n-workflow.cn)  
+- [Zie619 / n8n-workflows](https://github.com/Zie619/n8n-workflows) 
+- [TICK077 / n8n-workflows.cn](https://github.com/TICK077/n8n-workflow.cn)  
+- 
+  
+---
+
+## 🔹 提交issue
+
+- 如发现翻译有误，请[提交issue](https://github.com/TICK077/n8n-workflow.cn/issues)
 
 

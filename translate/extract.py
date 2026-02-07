@@ -3,34 +3,53 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 INPUT_FILE = BASE_DIR / "../docs/api/search-index.json"
-OUTPUT_FILE = BASE_DIR / "./descriptions.json"
+DESC_OUT = BASE_DIR / "descriptions.json"
+NAME_OUT = BASE_DIR / "name.json"
 
 with open(INPUT_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-result = {}
+descriptions = {}
+names = {}
 
-# 情况 1：最常见 —— 顶层是 list
-if isinstance(data, list):
-    for item in data:
-        if "id" in item and "description" in item:
-            result[item["id"]] = {
-                "description_en": item["description"],
-                "description_zh": ""
-            }
+def collect(item):
+    if not isinstance(item, dict):
+        return
 
-# 情况 2：顶层是 dict，里面包了一层
-elif isinstance(data, dict):
-    for v in data.values():
-        if isinstance(v, list):
-            for item in v:
-                if "id" in item and "description" in item:
-                    result[item["id"]] = {
-                        "description_en": item["description"],
-                        "description_zh": ""
-                    }
+    item_id = item.get("id")
+    if not item_id:
+        return
 
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump(result, f, ensure_ascii=False, indent=2)
+    # 提取 description
+    if "description" in item and item_id not in descriptions:
+        descriptions[item_id] = {
+            "description_en": item["description"],
+            "description_zh": ""
+        }
 
-print(f"已提取 {len(result)} 条 description → {OUTPUT_FILE}")
+    # 提取 name
+    if "name" in item and item_id not in names:
+        names[item_id] = {
+            "name_en": item["name"],
+            "name_zh": ""
+        }
+
+def walk(obj):
+    if isinstance(obj, list):
+        for v in obj:
+            walk(v)
+    elif isinstance(obj, dict):
+        collect(obj)
+        for v in obj.values():
+            walk(v)
+
+walk(data)
+
+with open(DESC_OUT, "w", encoding="utf-8") as f:
+    json.dump(descriptions, f, ensure_ascii=False, indent=2)
+
+with open(NAME_OUT, "w", encoding="utf-8") as f:
+    json.dump(names, f, ensure_ascii=False, indent=2)
+
+print(f"已提取 description：{len(descriptions)} 条 → descriptions.json")
+print(f"已提取 name：{len(names)} 条 → name.json")
