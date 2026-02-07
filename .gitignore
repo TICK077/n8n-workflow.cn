@@ -109,3 +109,7 @@ package-lock.json
 import_log.json
 # Archive folder for old files
 archive/
+
+# >>> gitAuto
+gitAuto.exe
+# <<< gitAuto
